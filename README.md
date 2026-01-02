@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
@@ -71,3 +72,7 @@ export default defineConfig([
   },
 ])
 ```
+=======
+# My_Portfolio
+Abdul Ahad - Portfolio A clean, minimal portfolio website to showcase my work as a Web Developer. Features project case studies, resume download, and contact form with email integration.
+>>>>>>> 6e34404dbb19975a02541aab998f97ddb784a6e9
