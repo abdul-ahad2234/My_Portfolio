@@ -78,7 +78,7 @@ const App: React.FC = () => {
             </main>
             
             <footer className="relative z-10 py-10 text-center text-gray-500 text-sm glass-card border-t border-white/5">
-              <p>© 2024 Nova Portfolio. Crafted for the future.</p>
+              <p>© 2026 Abdul Ahad Portfolio. Crafted for the future.</p>
             </footer>
           </motion.div>
         )}

@@ -1,7 +1,6 @@
-
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Info, ExternalLink, ArrowUpRight } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { ExternalLink } from 'lucide-react';
 
 const projects = [
   { id: 1, title: "MEDICAL APPOINTMENT SYSTEM", category: "Full-Stack Healthcare Platform", image: "/images/care.PNG", tags: ["PHP", "MySQL", "JavaScript", "Bootstrap", "CRUD"] },
@@ -52,21 +51,6 @@ const ProjectCard = ({ project }: any) => {
           alt={project.title} 
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 group-hover:blur-[2px]" 
         />
-        
-        {/* Floating Detail Icon Button */}
-        <div className="absolute top-4 right-4 z-20">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.5, y: -10 }}
-            animate={{ 
-              opacity: isHovered ? 1 : 0, 
-              scale: isHovered ? 1 : 0.5,
-              y: isHovered ? 0 : -10
-            }}
-            className="w-10 h-10 rounded-full glass-card border border-white/20 flex items-center justify-center text-white hover:bg-cyan-500 hover:border-cyan-400 transition-colors shadow-lg"
-          >
-            <Info size={18} />
-          </motion.div>
-        </div>
 
         <div className="absolute inset-0 bg-gradient-to-t from-[#030014]/90 via-[#030014]/40 to-transparent sm:opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
           <motion.div
@@ -74,14 +58,20 @@ const ProjectCard = ({ project }: any) => {
              animate={{ y: isHovered ? 0 : 20, opacity: isHovered ? 1 : 0 }}
              className="w-full"
           >
-            <div className="flex justify-between items-start mb-2">
-              <h3 className="text-xl font-bold font-space text-white leading-tight">{project.title}</h3>
-              <ArrowUpRight className="text-cyan-400 w-5 h-5 opacity-0 group-hover:opacity-100 transition-opacity delay-100" />
+            {/* Title - Left aligned with proper size */}
+            <div className="text-left mb-2">
+              <h3 className="text-xl font-bold font-space text-white leading-tight">
+                {project.title}
+              </h3>
             </div>
             
-            <p className="text-cyan-400 font-mono text-[9px] mb-4 tracking-[0.2em] uppercase">{project.category}</p>
+            {/* Category - Left aligned */}
+            <p className="text-cyan-400 font-mono text-[9px] mb-4 tracking-[0.2em] uppercase text-left">
+              {project.category}
+            </p>
             
-            <div className="flex gap-1.5 flex-wrap">
+            {/* Tags - Left aligned */}
+            <div className="flex gap-1.5 flex-wrap justify-start">
               {project.tags.map((tag: string) => (
                 <span key={tag} className="px-2.5 py-0.5 bg-white/10 text-white/70 text-[8px] font-mono rounded-full backdrop-blur-md border border-white/5">
                   {tag}
@@ -103,7 +93,7 @@ export const Projects = () => {
       
       <div className="container mx-auto">
         <div className="mb-12 md:mb-20 flex flex-col md:flex-row justify-between items-start md:items-end border-b border-white/10 pb-8 md:pb-10 gap-6">
-          <div>
+          <div className="text-left">
             <motion.p 
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -111,7 +101,7 @@ export const Projects = () => {
             >
               Portfolio Matrix
             </motion.p>
-            <h2 className="text-4xl sm:text-5xl md:text-7xl font-bold font-space tracking-tight leading-none uppercase">
+            <h2 className="text-4xl sm:text-5xl md:text-7xl font-bold font-space tracking-tight leading-none uppercase text-left">
               CRAFTED <br/><span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-white/40 italic">PIXELS</span>
             </h2>
           </div>
